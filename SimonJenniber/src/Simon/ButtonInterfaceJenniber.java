@@ -19,4 +19,6 @@ public interface ButtonInterfaceJenniber extends Clickable {
 
 	void dim();
 
+	void setAction(Action action);
+
 }
