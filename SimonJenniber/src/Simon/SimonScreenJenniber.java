@@ -101,17 +101,12 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 		}
 		b = button[randNum];
 		lastSelectedButton = randNum;
-		return getMove(b);
+		return new Move(button[randNum]);
 	}
 
-	public MoveInterfaceJenniber getMove(ButtonInterfaceJenniber b) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public ProgressInterfaceJenniber getProgress() {
-		// Wait for partner's code
-		return null;
+		return new Progress();
 	}
 
 	public void addButtons(ArrayList<Visible> viewObjects) {
@@ -119,11 +114,13 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 		Color[] colors= {Color.blue,Color.red,Color.magenta, Color.yellow, 
 				Color.green, Color.orange};
 		for(int i= 0; i<numOfButtons; i++){
-			//check getButton()?
-			final ButtonInterfaceJenniber b = getAButton();
-			b.setColor(colors[i]);
-			b.setX(50);
-			b.setY(50);
+			button[i] = getAButton();
+			button[i].setColor(colors[i]);
+			button[i].setX(160 + (int)(100*Math.cos(i*2*Math.PI/(numOfButtons))));
+			button[i].setY(200 - (int)(100*Math.sin(i*2*Math.PI/(numOfButtons))));
+			final ButtonInterfaceJenniber b = button[i];
+			System.out.println(b+" has x = "+b.getX()+", y ="+b.getY());
+			b.dim();
 			b.setAction(new Action(){
 				public void act() {
 					if(acceptingInput){
@@ -155,15 +152,13 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 				Thread nextRound = new Thread(SimonScreenJenniber.this);
 				nextRound.start();
 			}
-			viewObjects.add(b);
+			viewObjects.add(button[i]);
 		}
 		
 	}
 
 	private ButtonInterfaceJenniber getAButton() {
-		//partner's code
-		return null;
+		return new Button();
 	}
-
 
 }
