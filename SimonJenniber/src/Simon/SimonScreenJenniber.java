@@ -28,7 +28,7 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 
 	@Override
 	public void run() {
-		label.setText("");
+		label.setText(" ");
 		nextRound();
 	}
 
@@ -80,10 +80,10 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 
 	@Override
 	public void initAllObjects(ArrayList<Visible> viewObjects) {
+		sequence = new ArrayList<MoveInterfaceJenniber>();
 		addButtons(viewObjects);
 		progress = getProgress();
 		label = new TextLabel(130,230,300,40,"Let's play Simon!");
-		sequence = new ArrayList<MoveInterfaceJenniber>();
 		//add 2 moves to start
 		lastSelectedButton = -1;
 		sequence.add(randomMove());
@@ -111,6 +111,7 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 
 	public void addButtons(ArrayList<Visible> viewObjects) {
 		int numOfButtons = 6;
+		button = new ButtonInterfaceJenniber[numOfButtons];
 		Color[] colors= {Color.blue,Color.red,Color.magenta, Color.yellow, 
 				Color.green, Color.orange};
 		for(int i= 0; i<numOfButtons; i++){
@@ -142,13 +143,13 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 				}
 				
 			});
-			if(b==sequence.get(sequenceIndex)){
+			if(acceptingInput && sequence.get(sequenceIndex).getButton() == b){
 				sequenceIndex++;
-			}
-			else{
+			}else if(acceptingInput){
 				progress.gameOver();
+				return;
 			}
-			if(sequenceIndex==sequence.size()){
+			if(sequenceIndex == sequence.size()){
 				Thread nextRound = new Thread(SimonScreenJenniber.this);
 				nextRound.start();
 			}
