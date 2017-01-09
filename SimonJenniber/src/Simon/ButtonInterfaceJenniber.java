@@ -14,11 +14,11 @@ public interface ButtonInterfaceJenniber extends Clickable {
 	void setX(int i);
 
 	void setY(int i);
-
-	void setAction(Action action);
 	
 	void highlight();
 
 	void dim();
+
+	void setAction(Action action);
 
 }
