@@ -5,11 +5,11 @@ import guiPractice.GUIApplication;
 public class SimonGameJenniber extends GUIApplication {
 
 	public SimonGameJenniber() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	@Override
-	protected void initScreen() {
+	public void initScreen() {
 		SimonScreenJenniber click = new SimonScreenJenniber(getWidth(),getHeight());
 		setScreen(click);
 
