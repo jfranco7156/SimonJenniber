@@ -1,4 +1,4 @@
-package Simon;
+package Simon; 
 
 import guiPractice.GUIApplication;
 
