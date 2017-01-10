@@ -66,12 +66,8 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 		ButtonInterfaceJenniber b = null;
 		for(int i=0;i<sequence.size();i++){
 			if(b!=null)b.dim();
-			
 			b = sequence.get(i).getButton();
 			b.highlight();
-			//10 seconds time
-			int sleepTime = 1000/roundNumber;
-			if(sleepTime<=0)sleepTime=2;
 			try {
 				Thread.sleep((long)(2000*(2.0/(roundNumber+2))));
 			} catch (InterruptedException e) {
