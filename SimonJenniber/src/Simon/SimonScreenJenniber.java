@@ -31,7 +31,7 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 		sequence = new ArrayList<MoveInterfaceJenniber>();
 		addButtons(viewObjects);
 		progress = getProgress();
-		label = new TextLabel(130,230,300,40,"Let's play Simon!");
+		label = new TextLabel(220,310,300,40,"Let's play Simon!");
 		//add 2 moves to start
 		lastSelectedButton = -1;
 		sequence.add(randomMove());
@@ -111,10 +111,9 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 		for(int i= 0; i<numOfButtons; i++){
 			button[i] = getAButton();
 			button[i].setColor(colors[i]);
-			button[i].setX(260 + (int)(100*Math.cos(i*2*Math.PI/(numOfButtons))));
-			button[i].setY(220 - (int)(100*Math.sin(i*2*Math.PI/(numOfButtons))));
+			button[i].setX(260 + (int)(60*Math.cos(i*2*Math.PI/(numOfButtons))));
+			button[i].setY(200 - (int)(60*Math.sin(i*2*Math.PI/(numOfButtons))));
 			final ButtonInterfaceJenniber b = button[i];
-			//System.out.println(b+" has x = "+b.getX()+", y ="+b.getY());
 			b.dim();
 			b.setAction(new Action(){
 				public void act() {

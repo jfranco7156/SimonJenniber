@@ -35,7 +35,7 @@ public class Progress extends Component implements ProgressInterfaceJenniber {
 
 	@Override
 	public void setSequenceSize(int s) {
-		sequence = "Sequence length"  + s;
+		sequence = "Sequence length "  + s;
 		update();
 
 	}
