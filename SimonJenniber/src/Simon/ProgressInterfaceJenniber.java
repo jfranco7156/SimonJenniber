@@ -1,6 +1,6 @@
 package Simon;
 
-public interface ProgressInterfaceJenniber{
+public interface ProgressInterfaceJenniber extends Visible{
 
 	void gameOver();
 	void setRound(int r);
