@@ -18,5 +18,4 @@ public interface ButtonInterfaceJenniber extends Clickable {
 	void setX(int i);
 
 	void setY(int i);
-
 }
