@@ -71,7 +71,6 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 			try {
 				Thread.sleep((long)(2000*(2.0/(roundNumber+2))));
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
@@ -112,8 +111,8 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 		for(int i= 0; i<numOfButtons; i++){
 			button[i] = getAButton();
 			button[i].setColor(colors[i]);
-			button[i].setX(160 + (int)(100*Math.cos(i*2*Math.PI/(numOfButtons))));
-			button[i].setY(200 - (int)(100*Math.sin(i*2*Math.PI/(numOfButtons))));
+			button[i].setX(260 + (int)(100*Math.cos(i*2*Math.PI/(numOfButtons))));
+			button[i].setY(220 - (int)(100*Math.sin(i*2*Math.PI/(numOfButtons))));
 			final ButtonInterfaceJenniber b = button[i];
 			//System.out.println(b+" has x = "+b.getX()+", y ="+b.getY());
 			b.dim();
@@ -125,7 +124,6 @@ public class SimonScreenJenniber extends ClickableScreen implements Runnable {
 							try {
 								Thread.sleep(400);
 							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
 							b.dim();

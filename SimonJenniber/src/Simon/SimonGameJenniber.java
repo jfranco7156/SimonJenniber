@@ -4,6 +4,11 @@ import guiPractice.GUIApplication;
 
 public class SimonGameJenniber extends GUIApplication {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4297926260023939521L;
+
 	public SimonGameJenniber() {
 		super();
 	}
