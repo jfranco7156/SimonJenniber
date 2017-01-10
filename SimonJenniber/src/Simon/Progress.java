@@ -64,6 +64,4 @@ public class Progress extends Component implements ProgressInterfaceJenniber {
 			}
 		}
 	}
-
-
 }
